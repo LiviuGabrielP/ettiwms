@@ -1,24 +1,26 @@
-<!-- login.blade.php -->
-@extends('layout')
+@extends('loginlayout')
 
 @section('content')
-    <div class="form-container">
-        <form method="POST" action="#">
-            @csrf
-            <h2 class="text-center mb-4">Login</h2>
-
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username">
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+            <div class="signup">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <label for="chk" aria-hidden="true">Sign up</label>
+                    <input class="form-control" type="text" name="txt" placeholder="User name" required="" value="{{ old('txt') }}">
+                    <input class="form-control" type="email" name="email" placeholder="Email" required="" value="{{ old('email') }}">
+                    <input class="form-control" type="password" name="pswd" placeholder="Password" required="">
+                    <button class="btn btn-primary" type="submit">Sign up</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
+            <div class="login">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <label for="chk" aria-hidden="true">Login</label>
+                    <input class="form-control" type="email" name="email" placeholder="Email" required="" value="{{ old('email') }}">
+                    <input class="form-control" type="password" name="pswd" placeholder="Password" required="">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Log In</button>
-                <a href="#" class="btn btn-secondary btn-block">Register</a>
-            </div>
-        </form>
     </div>
 @endsection

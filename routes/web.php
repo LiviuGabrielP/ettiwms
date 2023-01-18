@@ -22,7 +22,7 @@ Route::get('/login', function () {
 
 });
 
-Route::get('/test', function () {
-    return view('layout');
+Route::get('/register', function () {
+    return view('pages.register');
 
 });

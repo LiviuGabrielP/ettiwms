@@ -1,28 +1,49 @@
-/* navbar.css */
+/* Navigation Bar */
 .navbar {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80px;
     background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    overflow-x: hidden;
+    transition: 0.5s;
   }
 
-  .navbar-brand {
-    flex-grow: 1;
-  }
-
-  .navbar-nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-item {
-    margin: 0 1rem;
-  }
-
-  .nav-link {
-    color: #fff;
+  /* Navigation links */
+  .navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
+    font-size: 20px;
+  }
+
+  /* Navigation links on hover */
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* Show navigation links on click */
+  .navbar.responsive {
+    width: 100%;
+  }
+
+  /* Logo */
+  .logo {
+    padding: 14px 16px;
+    background-color: #333;
+    color: #f2f2f2;
+    font-size: 20px;
+  }
+
+  /* Media query for screen width */
+  @media screen and (max-width: 600px) {
+    .navbar {
+      width: 100%;
+    }
   }
